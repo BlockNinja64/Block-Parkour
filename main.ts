@@ -8,6 +8,10 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     pause(500)
     mySprite.vy += 0
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line turn`, function (sprite, location) {
+    level += 1
+    loadLevel(level)
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (crouched) {
         crouched = 0
@@ -36,9 +40,12 @@ function loadLevel (levelNum: number) {
             if (levelNum == 2) {
                 tiles.setCurrentTilemap(tilemap`Level2`)
                 mySprite.setPosition(64, 864)
-                info.setLife(1)
             } else {
-            	
+                if (levelNum == 3) {
+                    game.gameOver(true)
+                } else {
+                	
+                }
             }
         }
     }
