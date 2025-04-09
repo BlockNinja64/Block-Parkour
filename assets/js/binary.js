@@ -1,4 +1,4 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v2.0.48/---simulator","cdnUrl":"https://cdn.makecode.com","version":"0.1.0","target":"arcade","targetVersion":"2.0.48","repo":"blockninja64/mine_parkourio"}
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v2.0.48/---simulator","cdnUrl":"https://cdn.makecode.com","version":"0.1.1","target":"arcade","targetVersion":"2.0.48","repo":"blockninja64/mine_parkourio"}
 // total=2184748 new=24.48% cached=71.47% other=4.05%
 (function (ectx) {
 'use strict';
@@ -536,7 +536,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P50419(s) {
+function _main___P50444(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1160,13 +1160,13 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-_main___P50419.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
-_main___P50419.continuations = [  ]
+_main___P50444.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
+_main___P50444.continuations = [  ]
 
-function _main___P50419_mk(s) {
+function _main___P50444_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P50419, depth: s.depth + 1,
+        parent: s, fn: _main___P50444, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -60150,5 +60150,5 @@ const sprites_BaseSpriteSayRenderer__C25467_VT = mkVTable({
 
 const breakpoints = setupDebugger(1, ["transparency16___48130","tile1___48135","tile2___48140","tile3___48145","tile4___48150","tile5___48155","tile6___48160","tile7___48165","tile11___48185","tile8___48170","tile9___48175","tile10___48180","mySprite___50147","level___50181","crouched___50193"])
 
-return _main___P50419
+return _main___P50444
 })
