@@ -1,0 +1,47 @@
+{
+    "image1": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAADwAAAAAAAA/2//AAAA8P9mZt//DwAfZv/23T8P8GH23T/zM/9VZf8//TVT/1Bi3939UzMPVWXf3f1TMw/wYf8//TVT//AW9t0/8zP/AG9h//bdPw8A8P9mZt//DwAAAP9v/wAAAAAAAPAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Prototype Steve"
+    },
+    "image3": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8P//AAAAAABv1t0P//AP8Gb2P/01Pw9VYtbd/TNT81BlZtZd8z/zVRVmZj/f/f/wZmFm///fDwBvFmZmD/AAAPD//28PAAAAAABvbw8AAAAAAPDwAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "princessLeft0"
+    },
+    "image4": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8PAAAAAAAABvbw8AAADw//9vDwAAAG8WZmYP8ADwZmFm///fD1UVZmY/3/3/UGVm1l3zP/NVYtbd/TNT8/Bm9j/9NT8PAG/W3Q//8A8A8P//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "princessRight"
+    },
+    "image2": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAADwAAAAAAAA/28AAAAA8P9mZgAAAAAfZv/2AAAA8GH23T8AAABVZf8//QAAAFBi3939AAAAVWXf3f0AAADwYf8//QAAAPAW9t0/AAAAAG9h//YAAAAA8P9mZgAAAAAAAP9vAAAAAAAAAPAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Prototype Steve Crouched"
+    },
+    "image5": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8P//AAAAAABv1t0PAAAA8Gb2P/0AAABVYtbd/QAAAFBlZtZdAAAAVRVmZj8AAADwZmFm/wAAAABvFmZmAAAAAPD//28AAAAAAABvbwAAAAAAAPDwAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "princessLeftCrouched"
+    },
+    "image6": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8PAAAAAAAABvbwAAAADw//9vAAAAAG8WZmYAAADwZmFm/wAAAFUVZmY/AAAAUGVm1l0AAABVYtbd/QAAAPBm9j/9AAAAAG/W3Q8AAAAA8P//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "princessRightCrouched"
+    },
+    "image8": {
+        "data": "hwQYABgAAAAAu7u7u7u7u7u7uwCwuxG7EbsRuxG7EQsbG7EbsRuxG7Ebsbsbsbu7u7u7u7u7G7u7sRsRERERERGxG7G7uxERERERERERu7EbuxERERERERERu7sbsRERERERERERG7u7sRERERERERERG7G7uxERERERERERu7EbuxERERERERERu7sbsRERERERERERG7u7sRERERERERERG7G7uxERERERERERu7EbuxERERERERERu7sbsRERERERERERG7u7sRERERERERERG7G7uxERERERERERu7EbuxERERERERERu7sbsRsRERERERGxG7u7sbu7u7u7u7u7G7G7G7EbsRuxG7EbsbGwEbsRuxG7EbsRuwsAu7u7u7u7u7u7uwA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "smallSwirlyWhite"
+    },
+    "image7": {
+        "data": "hwQYABgAAAAAu7u7u7u7u7u7uwCwHRERERERERERvQvb0bu7u7u7u7u70bsbvR0RERERERHRG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbuxERERERERERG7sbvR0RERERERHRG7vb0bu7u7u7u7u70buwHRERERERERERvQsAu7u7u7u7u7u7uwA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "smallDefault"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
