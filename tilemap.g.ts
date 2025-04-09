@@ -5,8 +5,6 @@ namespace myTiles {
     //% fixedInstance jres blockIdentity=images._tile
     export const tile1 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    export const tile2 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._tile
     export const tile3 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const tile4 = image.ofBuffer(hex``);
@@ -19,11 +17,9 @@ namespace myTiles {
     //% fixedInstance jres blockIdentity=images._tile
     export const tile8 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    export const tile9 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._tile
-    export const tile10 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._tile
     export const tile11 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile2 = image.ofBuffer(hex``);
 
     helpers._registerFactory("tilemap", function(name: string) {
         switch(helpers.stringTrim(name)) {
@@ -129,8 +125,6 @@ namespace myTiles {
             case "transparency16":return transparency16;
             case "Finish line":
             case "tile1":return tile1;
-            case "Finish Block":
-            case "tile2":return tile2;
             case "forestTiles0":
             case "tile3":return tile3;
             case "forestTiles21":
@@ -143,12 +137,10 @@ namespace myTiles {
             case "tile7":return tile7;
             case "collectibleBlueCrystal":
             case "tile8":return tile8;
-            case "stairLadder":
-            case "tile9":return tile9;
-            case "stairSouth":
-            case "tile10":return tile10;
             case "Finish line turn":
             case "tile11":return tile11;
+            case "Finish Block":
+            case "tile2":return tile2;
         }
         return null;
     })

@@ -10,12 +10,6 @@
         "tilemapTile": true,
         "displayName": "Finish line"
     },
-    "tile2": {
-        "data": "hwQQABAAAAD/////EREREf////8RERER/////xERERH/////EREREf////8RERER/////xERERH/////EREREf////8REREREREREf////8RERER/////xERERH/////EREREf////8RERER/////xERERH/////EREREf////8RERER/////w==",
-        "mimeType": "image/x-mkcd-f4",
-        "tilemapTile": true,
-        "displayName": "Finish Block"
-    },
     "tile3": {
         "data": "hwQQABAAAAAAYGaIZogIAGB2d3aHZvgAYHdnd2aGZg92d3d3d2fm/nZ3d3d3Zuj+dnd3d2dmhv52d3d3dndmhnZ3d3d3Z2budnd3d3dmiOh2d3d3Z2aG+HZ3d3d3Zmb/dnd3d3Znhv92d3d3Z4aI+GB3Z3dnZogPYHZ3dodm+AAAYGaIZogIAA==",
         "mimeType": "image/x-mkcd-f4",
@@ -52,23 +46,17 @@
         "tilemapTile": true,
         "displayName": "collectibleBlueCrystal"
     },
-    "tile9": {
-        "data": "hwQQABAAAADu7u7u7u7u7kNOREREQ+7uQ+7u7u5DzuxDTj7kQ0PO7ENOPuRDQ87sQ04+5ENDzuxDTj7kQ0PO7ENOPuRDQ87sQ04+5ENDzuxDTj7kQ0PO7ENOPuRDQ87sQ04+5ENDzuxDTj7kQ0PO7EPu7u7uQ87sQ05ERERD7u7u7u7u7u7u7g==",
-        "mimeType": "image/x-mkcd-f4",
-        "tilemapTile": true,
-        "displayName": "stairLadder"
-    },
-    "tile10": {
-        "data": "hwQQABAAAAC83d3d3d3d3bzd3d3d3d3dvMzLvMzLvMzcy73cy73cy9zLvdzLvdzL3Mu93Mu93Mvcy73cy73cy9zLvdzLvdzL3Mu93Mu93Mvcy73cy73cy9zLvdzLvdzL3Mu93Mu93Mvcy73cy73cy7zMy7zMy7zMvN3d3d3d3d283d3d3d3d3Q==",
-        "mimeType": "image/x-mkcd-f4",
-        "tilemapTile": true,
-        "displayName": "stairSouth"
-    },
     "tile11": {
         "data": "hwQQABAAAAAAAAAQDwAAAAAAAPABAAAAAAAAEA8AAAAAAADwAQAAAAAAABAPAAAAAAAA8AEAAAAAAAAQDwAAAAAAAPABAAAAAAAAEA8AAAAAAADwAQAAAAAAABAPAAAAAAAA8AEAAAAAAAAQDwAAAAAAAPABAAAAAAAAEA8AAAAAAADwAQAAAA==",
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true,
         "displayName": "Finish line turn"
+    },
+    "tile2": {
+        "data": "hwQQABAAAAD//xER//8REf//ERH//xER//8REf//ERH//xER//8RERER//8REf//ERH//xER//8REf//ERH//xER//8REf////8REf//ERH//xER//8REf//ERH//xER//8REf//EREREf//ERH//xER//8REf//ERH//xER//8REf//ERH//w==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true,
+        "displayName": "Finish Block"
     },
     "level1": {
         "id": "level1",
