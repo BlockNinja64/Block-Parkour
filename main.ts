@@ -36,6 +36,7 @@ function loadLevel (levelNum: number) {
             if (levelNum == 2) {
                 tiles.setCurrentTilemap(tilemap`Level2`)
                 mySprite.setPosition(64, 864)
+                info.setLife(1)
             } else {
             	
             }
@@ -74,7 +75,7 @@ let level = 0
 let mySprite: Sprite = null
 scene.setBackgroundColor(9)
 mySprite = sprites.create(assets.image`Prototype Steve`, SpriteKind.Player)
-level = 2
+level = 0
 controller.moveSprite(mySprite, 100, 0)
 mySprite.ay = 300
 scene.cameraFollowSprite(mySprite)
