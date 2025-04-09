@@ -62,6 +62,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line`, function (sprit
     loadLevel(level)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
+    scene.cameraShake(4, 500)
     info.changeLifeBy(-1)
     loadLevel(level)
 })
@@ -80,7 +81,7 @@ info.onLifeZero(function () {
 let crouched = 0
 let level = 0
 let mySprite: Sprite = null
-scene.setBackgroundColor(9)
+scene.setBackgroundColor(15)
 mySprite = sprites.create(assets.image`Prototype Steve`, SpriteKind.Player)
 level = 0
 controller.moveSprite(mySprite, 100, 0)
