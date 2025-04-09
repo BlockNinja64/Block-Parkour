@@ -1,5 +1,6 @@
 {
     "name": "MINE_PARKOUR.IO",
+    "version": "0.1.0",
     "description": "",
     "dependencies": {
         "device": "*"
