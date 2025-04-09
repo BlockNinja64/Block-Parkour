@@ -21,6 +21,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.setImage(assets.image`Prototype Steve Crouched`)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite3, location3) {
+    info.changeLifeBy(-1)
+    scene.cameraShake(4, 500)
+    loadLevel(level)
+})
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     if (crouched) {
         mySprite.setImage(assets.image`princessLeftCrouched`)
@@ -32,22 +37,16 @@ function loadLevel (levelNum: number) {
     if (levelNum == 0) {
         tiles.setCurrentTilemap(tilemap`Level0`)
         mySprite.setPosition(19, 55)
+    } else if (levelNum == 1) {
+        tiles.setCurrentTilemap(tilemap`Level1`)
+        mySprite.setPosition(19, 74)
+    } else if (levelNum == 2) {
+        tiles.setCurrentTilemap(tilemap`Level2`)
+        mySprite.setPosition(64, 864)
+    } else if (levelNum == 3) {
+        game.gameOver(true)
     } else {
-        if (levelNum == 1) {
-            tiles.setCurrentTilemap(tilemap`Level1`)
-            mySprite.setPosition(19, 74)
-        } else {
-            if (levelNum == 2) {
-                tiles.setCurrentTilemap(tilemap`Level2`)
-                mySprite.setPosition(64, 864)
-            } else {
-                if (levelNum == 3) {
-                    game.gameOver(true)
-                } else {
-                	
-                }
-            }
-        }
+    	
     }
 }
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -56,15 +55,6 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     } else {
         mySprite.setImage(assets.image`princessRight`)
     }
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line`, function (sprite, location) {
-    level += 1
-    loadLevel(level)
-})
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
-    scene.cameraShake(4, 500)
-    info.changeLifeBy(-1)
-    loadLevel(level)
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     if (crouched) {
@@ -77,6 +67,10 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 info.onLifeZero(function () {
     game.gameOver(false)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line`, function (sprite2, location2) {
+    level += 1
+    loadLevel(level)
 })
 let crouched = 0
 let level = 0
