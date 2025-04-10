@@ -75,6 +75,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line`, function (sprit
 let crouched = 0
 let level = 0
 let mySprite: Sprite = null
+game.splash("MINE_PARKOUR.IO")
 scene.setBackgroundColor(15)
 mySprite = sprites.create(assets.image`Prototype Steve`, SpriteKind.Player)
 level = 0
@@ -83,6 +84,7 @@ mySprite.ay = 300
 scene.cameraFollowSprite(mySprite)
 info.setLife(3)
 loadLevel(level)
+game.showLongText("PRESS LEFT OR RIGHT TO MOVE, UP OR B TO JUMP, AND DOWN OR A TO CROUCH", DialogLayout.Bottom)
 game.onUpdateInterval(100, function () {
     if (mySprite.tileKindAt(TileDirection.Center, assets.tile`collectibleRedCrystal`)) {
         info.changeLifeBy(1)
