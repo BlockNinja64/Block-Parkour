@@ -21,6 +21,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.setImage(assets.image`Prototype Steve Crouched`)
     }
 })
+function round2decimal (thing_to_round: number) {
+    return Math.round(thing_to_round * 100) / 100
+}
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite3, location3) {
     info.changeLifeBy(-1)
     scene.cameraShake(4, 500)
@@ -33,6 +36,11 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.setImage(assets.image`princessLeft0`)
     }
 })
+info.onCountdownEnd(function () {
+    game.setGameOverMessage(true, "TIMES UP!")
+    game.setGameOverEffect(true, effects.dissolve)
+    game.gameOver(true)
+})
 function loadLevel (levelNum: number) {
     if (levelNum == 0) {
         tiles.setCurrentTilemap(tilemap`Level0`)
@@ -44,6 +52,9 @@ function loadLevel (levelNum: number) {
         tiles.setCurrentTilemap(tilemap`Level2`)
         mySprite.setPosition(64, 864)
     } else if (levelNum == 3) {
+        game.setGameOverMessage(true, "YOU WIN " + "TIME: " + round2decimal(600 - info.countdown()))
+        game.setGameOverEffect(true, effects.confetti)
+        info.stopCountdown()
         game.gameOver(true)
     } else {
     	
@@ -66,7 +77,9 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 info.onLifeZero(function () {
-    game.gameOver(false)
+    game.setGameOverMessage(true, "YOU DIED")
+    game.setGameOverEffect(true, effects.dissolve)
+    game.gameOver(true)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line`, function (sprite2, location2) {
     level += 1
@@ -85,6 +98,7 @@ scene.cameraFollowSprite(mySprite)
 info.setLife(3)
 loadLevel(level)
 game.showLongText("PRESS LEFT OR RIGHT TO MOVE, UP OR B TO JUMP, AND DOWN OR A TO CROUCH", DialogLayout.Bottom)
+info.startCountdown(600)
 game.onUpdateInterval(100, function () {
     if (mySprite.tileKindAt(TileDirection.Center, assets.tile`collectibleRedCrystal`)) {
         info.changeLifeBy(1)
