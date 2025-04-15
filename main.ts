@@ -24,11 +24,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 function round2decimal (thing_to_round: number) {
     return Math.round(thing_to_round * 100) / 100
 }
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite3, location3) {
-    info.changeLifeBy(-1)
-    scene.cameraShake(4, 500)
-    loadLevel(level)
-})
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     if (crouched) {
         mySprite.setImage(assets.image`princessLeftCrouched`)
@@ -37,9 +32,9 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 info.onCountdownEnd(function () {
-    game.setGameOverMessage(true, "TIMES UP!")
-    game.setGameOverEffect(true, effects.dissolve)
-    game.gameOver(true)
+    game.setGameOverMessage(false, "TIMES UP!")
+    game.setGameOverEffect(false, effects.dissolve)
+    game.gameOver(false)
 })
 function loadLevel (levelNum: number) {
     if (levelNum == 0) {
@@ -52,9 +47,13 @@ function loadLevel (levelNum: number) {
         tiles.setCurrentTilemap(tilemap`Level2`)
         mySprite.setPosition(64, 864)
     } else if (levelNum == 3) {
+        tiles.setCurrentTilemap(tilemap`Level3`)
+        mySprite.setPosition(16, 176)
+    } else if (levelNum == 4) {
         game.setGameOverMessage(true, "YOU WIN " + "TIME: " + round2decimal(600 - info.countdown()))
-        game.setGameOverEffect(true, effects.confetti)
+        info.setScore(round2decimal(600 - info.countdown()))
         info.stopCountdown()
+        game.setGameOverEffect(true, effects.confetti)
         game.gameOver(true)
     } else {
     	
@@ -67,6 +66,11 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.setImage(assets.image`princessRight`)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
+    scene.cameraShake(6, 500)
+    info.changeLifeBy(-1)
+    loadLevel(level)
+})
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     if (crouched) {
         crouched = 0
@@ -77,9 +81,9 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 info.onLifeZero(function () {
-    game.setGameOverMessage(true, "YOU DIED")
-    game.setGameOverEffect(true, effects.dissolve)
-    game.gameOver(true)
+    game.setGameOverMessage(false, "YOU DIED")
+    game.setGameOverEffect(false, effects.dissolve)
+    game.gameOver(false)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line`, function (sprite2, location2) {
     level += 1
@@ -99,7 +103,7 @@ info.setLife(3)
 loadLevel(level)
 game.showLongText("PRESS LEFT OR RIGHT TO MOVE, UP OR B TO JUMP, AND DOWN OR A TO CROUCH", DialogLayout.Bottom)
 info.startCountdown(600)
-game.onUpdateInterval(100, function () {
+game.onUpdateInterval(75, function () {
     if (mySprite.tileKindAt(TileDirection.Center, assets.tile`collectibleRedCrystal`)) {
         info.changeLifeBy(1)
         effects.hearts.startScreenEffect(2000)
