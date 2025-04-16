@@ -40,15 +40,19 @@ function loadLevel (levelNum: number) {
     if (levelNum == 0) {
         tiles.setCurrentTilemap(tilemap`Level0`)
         mySprite.setPosition(19, 55)
+        game.splash("LEVEL 0 ")
     } else if (levelNum == 1) {
         tiles.setCurrentTilemap(tilemap`Level1`)
         mySprite.setPosition(19, 74)
+        game.splash("LEVEL 1 ")
     } else if (levelNum == 2) {
         tiles.setCurrentTilemap(tilemap`Level2`)
         mySprite.setPosition(64, 864)
+        game.splash("LEVEL 2 ")
     } else if (levelNum == 3) {
         tiles.setCurrentTilemap(tilemap`Level3`)
         mySprite.setPosition(16, 176)
+        game.splash("LEVEL 3 ")
     } else if (levelNum == 4) {
         game.setGameOverMessage(true, "YOU WIN " + "TIME: " + round2decimal(600 - info.countdown()))
         info.setScore(round2decimal(600 - info.countdown()))
@@ -69,7 +73,13 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
     scene.cameraShake(6, 500)
     info.changeLifeBy(-1)
-    loadLevel(level)
+    if (info.life() == 0) {
+        game.setGameOverMessage(false, "YOU DIED")
+        game.setGameOverEffect(false, effects.dissolve)
+        game.gameOver(false)
+    } else {
+        loadLevel(level)
+    }
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     if (crouched) {
