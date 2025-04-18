@@ -54,13 +54,11 @@ function loadLevel (levelNum: number) {
         mySprite.setPosition(16, 176)
         game.splash("LEVEL 3 ")
     } else if (levelNum == 4) {
-        game.setGameOverMessage(true, "YOU WIN " + "TIME: " + round2decimal(600 - info.countdown()))
+        effects.confetti.startScreenEffect(100000000)
+        game.splash("YOU WIN " + "TIME: " + round2decimal(600 - info.countdown()))
+        game.showLongText("Thanks for playing \"MINE_PARKOUR.IO\"" + "v0.3.0" + "Fri. Apr. 18, 2025", DialogLayout.Full)
         info.setScore(round2decimal(600 - info.countdown()))
         info.stopCountdown()
-        game.setGameOverEffect(true, effects.confetti)
-        game.gameOver(true)
-    } else {
-    	
     }
 }
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
