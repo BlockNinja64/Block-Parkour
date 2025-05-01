@@ -68,17 +68,6 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.setImage(assets.image`princessRight`)
     }
 })
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
-    scene.cameraShake(6, 500)
-    info.changeLifeBy(-1)
-    if (info.life() == 0) {
-        game.setGameOverMessage(false, "YOU DIED")
-        game.setGameOverEffect(false, effects.dissolve)
-        game.gameOver(false)
-    } else {
-        loadLevel(level)
-    }
-})
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     if (crouched) {
         crouched = 0
@@ -111,6 +100,19 @@ info.setLife(3)
 loadLevel(level)
 game.showLongText("PRESS LEFT OR RIGHT TO MOVE, UP OR B TO JUMP, AND DOWN OR A TO CROUCH", DialogLayout.Bottom)
 info.startCountdown(600)
+game.onUpdateInterval(1, function () {
+    if (mySprite.tileKindAt(TileDirection.Bottom, sprites.dungeon.hazardLava1)) {
+        info.changeLifeBy(-1)
+        scene.cameraShake(6, 500)
+        if (info.life() == 0) {
+            game.setGameOverMessage(false, "YOU DIED")
+            game.setGameOverEffect(false, effects.dissolve)
+            game.gameOver(false)
+        } else {
+            loadLevel(level)
+        }
+    }
+})
 game.onUpdateInterval(75, function () {
     if (mySprite.tileKindAt(TileDirection.Center, assets.tile`collectibleRedCrystal`)) {
         info.changeLifeBy(1)
