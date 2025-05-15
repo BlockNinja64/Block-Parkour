@@ -56,7 +56,7 @@ function loadLevel (levelNum: number) {
     } else if (levelNum == 4) {
         effects.confetti.startScreenEffect(100000000)
         game.splash("YOU WIN! " + "TIME: " + round2decimal(600 - info.countdown()))
-        game.showLongText("Thanks for playing \"MINE_PARKOUR.IO\"   " + "v0.3.2   " + "Sun. Apr. 27, 2025", DialogLayout.Center)
+        game.showLongText("Thanks for playing \"Block Parkour\"   " + "0.3.3" + "Tues. May. 15, 2025", DialogLayout.Center)
         info.setScore(round2decimal(600 - info.countdown()))
         info.stopCountdown()
     }
@@ -89,7 +89,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line`, function (sprit
 let crouched = 0
 let level = 0
 let mySprite: Sprite = null
-game.splash("MINE_PARKOUR.IO")
+game.splash("Block Parkour")
 scene.setBackgroundColor(15)
 mySprite = sprites.create(assets.image`Prototype Steve`, SpriteKind.Player)
 level = 0
@@ -98,7 +98,7 @@ mySprite.ay = 300
 scene.cameraFollowSprite(mySprite)
 info.setLife(3)
 loadLevel(level)
-game.showLongText("PRESS LEFT OR RIGHT TO MOVE, UP OR B TO JUMP, AND DOWN OR A TO CROUCH", DialogLayout.Bottom)
+game.showLongText("Press left or right to move, up or B to jump, and down or A to crouch.   Have fun!", DialogLayout.Bottom)
 info.startCountdown(600)
 game.onUpdateInterval(1, function () {
     if (mySprite.tileKindAt(TileDirection.Bottom, sprites.dungeon.hazardLava1)) {

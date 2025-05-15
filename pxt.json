@@ -1,5 +1,5 @@
 {
-    "name": "MINE_PARKOUR.IO",
+    "name": "Block Parkour",
     "version": "0.3.2",
     "description": "",
     "dependencies": {
@@ -20,7 +20,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "2.0.53",
+        "target": "2.0.56",
         "targetId": "arcade"
     },
     "supportedTargets": [
