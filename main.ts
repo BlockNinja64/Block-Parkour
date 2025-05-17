@@ -56,9 +56,11 @@ function loadLevel (levelNum: number) {
     } else if (levelNum == 4) {
         effects.confetti.startScreenEffect(100000000)
         game.splash("YOU WIN! " + "TIME: " + round2decimal(600 - info.countdown()))
-        game.showLongText("Thanks for playing \"Block Parkour\"   " + "0.3.3" + "Tues. May. 15, 2025", DialogLayout.Center)
+        game.showLongText("Thanks for playing \"Block Parkour\"   " + "0.3.4" + "  Sat. May. 17, 2025", DialogLayout.Center)
         info.setScore(round2decimal(600 - info.countdown()))
         info.stopCountdown()
+        game.setGameOverMessage(true, "GAME OVER")
+        game.gameOver(true)
     }
 }
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -92,12 +94,13 @@ let mySprite: Sprite = null
 game.splash("Block Parkour")
 scene.setBackgroundColor(15)
 mySprite = sprites.create(assets.image`Prototype Steve`, SpriteKind.Player)
-level = 0
+level = 3
 controller.moveSprite(mySprite, 100, 0)
 mySprite.ay = 300
 scene.cameraFollowSprite(mySprite)
 info.setLife(3)
 loadLevel(level)
+game.setGameOverScoringType(game.ScoringType.LowScore)
 game.showLongText("Press left or right to move, up or B to jump, and down or A to crouch.   Have fun!", DialogLayout.Bottom)
 info.startCountdown(600)
 game.onUpdateInterval(1, function () {
