@@ -94,7 +94,7 @@ let mySprite: Sprite = null
 game.splash("Block Parkour")
 scene.setBackgroundColor(15)
 mySprite = sprites.create(assets.image`Prototype Steve`, SpriteKind.Player)
-level = 3
+level = 0
 controller.moveSprite(mySprite, 100, 0)
 mySprite.ay = 300
 scene.cameraFollowSprite(mySprite)
