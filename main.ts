@@ -70,7 +70,7 @@ function loadLevel (levelNum: number) {
     } else if (levelNum == 5) {
         effects.confetti.startScreenEffect(100000000)
         game.splash("YOU WIN! " + "TIME: " + round2decimal(600 - info.countdown()))
-        game.showLongText("Thanks for playing \"Block Parkour\"   " + "0.2.0" + "  Sat. Jun. 21, 2025", DialogLayout.Center)
+        game.showLongText("Thanks for playing \"Block Parkour\"   " + "0.4.0" + "  Sat. Jun. 21, 2025", DialogLayout.Center)
         info.setScore(round2decimal(600 - info.countdown()))
         info.stopCountdown()
         game.setGameOverMessage(true, "GAME OVER")
