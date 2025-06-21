@@ -12,6 +12,12 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line turn`, function (
     level += 1
     loadLevel(level)
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`collectibleBlueCrystal`, function (sprite2, location2) {
+    if (level == 4) {
+        mySprite.setPosition(640, 118)
+        level4checkpoint = 1
+    }
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (crouched) {
         crouched = 0
@@ -54,9 +60,17 @@ function loadLevel (levelNum: number) {
         mySprite.setPosition(16, 176)
         game.splash("LEVEL 3 ")
     } else if (levelNum == 4) {
+        if (level4checkpoint == 1) {
+            mySprite.setPosition(640, 118)
+        } else {
+            tiles.setCurrentTilemap(tilemap`level4`)
+            mySprite.setPosition(7, 140)
+            game.splash("LEVEL 4")
+        }
+    } else if (levelNum == 5) {
         effects.confetti.startScreenEffect(100000000)
         game.splash("YOU WIN! " + "TIME: " + round2decimal(600 - info.countdown()))
-        game.showLongText("Thanks for playing \"Block Parkour\"   " + "0.3.4" + "  Sat. May. 17, 2025", DialogLayout.Center)
+        game.showLongText("Thanks for playing \"Block Parkour\"   " + "0.2.0" + "  Sat. Jun. 21, 2025", DialogLayout.Center)
         info.setScore(round2decimal(600 - info.countdown()))
         info.stopCountdown()
         game.setGameOverMessage(true, "GAME OVER")
@@ -89,12 +103,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line`, function (sprit
     loadLevel(level)
 })
 let crouched = 0
+let level4checkpoint = 0
 let level = 0
 let mySprite: Sprite = null
 game.splash("Block Parkour")
 scene.setBackgroundColor(15)
 mySprite = sprites.create(assets.image`Prototype Steve`, SpriteKind.Player)
 level = 0
+level4checkpoint = 0
 controller.moveSprite(mySprite, 100, 0)
 mySprite.ay = 300
 scene.cameraFollowSprite(mySprite)
