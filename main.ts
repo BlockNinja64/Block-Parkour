@@ -70,8 +70,8 @@ function loadLevel (levelNum: number) {
     } else if (levelNum == 5) {
         effects.confetti.startScreenEffect(100000000)
         game.splash("YOU WIN! " + "TIME: " + round2decimal(600 - info.countdown()))
-        game.showLongText("Thanks for playing \"Block Parkour\"   " + "0.4.0" + "  Sat. Jun. 21, 2025", DialogLayout.Center)
-        info.setScore(round2decimal(600 - info.countdown()))
+        game.showLongText("Thanks for playing \"Block Parkour\"   " + "0.5.0" + "  Wed. Jun. 25, 2025", DialogLayout.Center)
+        info.setScore(round2decimal(300 - info.countdown()))
         info.stopCountdown()
         game.setGameOverMessage(true, "GAME OVER")
         game.gameOver(true)
@@ -106,7 +106,6 @@ let crouched = 0
 let level4checkpoint = 0
 let level = 0
 let mySprite: Sprite = null
-game.splash("Block Parkour")
 scene.setBackgroundColor(15)
 mySprite = sprites.create(assets.image`Prototype Steve`, SpriteKind.Player)
 level = 0
@@ -115,12 +114,26 @@ controller.moveSprite(mySprite, 100, 0)
 mySprite.ay = 300
 scene.cameraFollowSprite(mySprite)
 info.setLife(3)
-loadLevel(level)
 game.setGameOverScoringType(game.ScoringType.LowScore)
+game.splash("Block Parkour")
+loadLevel(level)
 game.showLongText("Press left or right to move, up or B to jump, and down or A to crouch.   Have fun!", DialogLayout.Bottom)
-info.startCountdown(600)
+info.startCountdown(300)
 game.onUpdateInterval(1, function () {
     if (mySprite.tileKindAt(TileDirection.Bottom, sprites.dungeon.hazardLava1)) {
+        info.changeLifeBy(-1)
+        scene.cameraShake(6, 500)
+        if (info.life() == 0) {
+            game.setGameOverMessage(false, "YOU DIED")
+            game.setGameOverEffect(false, effects.dissolve)
+            game.gameOver(false)
+        } else {
+            loadLevel(level)
+        }
+    }
+})
+game.onUpdateInterval(1, function () {
+    if (mySprite.tileKindAt(TileDirection.Bottom, assets.tile`Cant touch`)) {
         info.changeLifeBy(-1)
         scene.cameraShake(6, 500)
         if (info.life() == 0) {
