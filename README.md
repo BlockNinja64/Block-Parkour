@@ -1,7 +1,7 @@
  
 
 
-> Open this page at [https://blockninja64.github.io/mine_parkourio/](https://blockninja64.github.io/mine_parkourio/)
+> Open this page at [https://blockninja64.github.io/Block-Parkour/](https://blockninja64.github.io/Block-Parkour/)
 
 ## Use as Extension
 
@@ -10,7 +10,7 @@ This repository can be added as an **extension** in MakeCode.
 * open [https://arcade.makecode.com/](https://arcade.makecode.com/)
 * click on **New Project**
 * click on **Extensions** under the gearwheel menu
-* search for **https://github.com/blockninja64/mine_parkourio** and import
+* search for **https://github.com/BlockNinja64/Block-Parkour** and import
 
 ## Edit this project
 
@@ -18,7 +18,7 @@ To edit this repository in MakeCode.
 
 * open [https://arcade.makecode.com/](https://arcade.makecode.com/)
 * click on **Import** then click on **Import URL**
-* paste **https://github.com/blockninja64/mine_parkourio** and click import
+* paste **https://github.com/BlockNinja64/Block-Parkour** and click import
 
 #### Metadata (used for search, rendering)
 
