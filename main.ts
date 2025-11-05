@@ -53,11 +53,6 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.setImage(assets.image`princessLeft0`)
     }
 })
-controller.combos.attachCombo("a+b", function () {
-    game.setGameOverMessage(false, "YOU DIED")
-    game.setGameOverEffect(false, effects.dissolve)
-    game.gameOver(false)
-})
 info.onCountdownEnd(function () {
     game.setGameOverMessage(false, "TIMES UP")
     game.setGameOverEffect(false, effects.dissolve)
@@ -91,7 +86,7 @@ function loadLevel (levelNum: number) {
     } else if (levelNum == 5) {
         effects.confetti.startScreenEffect(100000000)
         game.splash("YOU WIN! " + "TIME: " + round2decimal(timerfunction() - info.countdown()))
-        game.showLongText("Thanks for playing \"Block Parkour\"   " + "0.6.1" + "  Wed. Nov. 5, 2025" + "   Made By BlockNinja64", DialogLayout.Center)
+        game.showLongText("Thanks for playing \"Block Parkour\"   " + "0.6.2" + "  Wed. Nov. 5, 2025" + "   Made By BlockNinja64", DialogLayout.Center)
         info.setScore(round2decimal(timerfunction() - info.countdown()))
         info.stopCountdown()
         game.setGameOverMessage(true, "GAME OVER")
@@ -137,6 +132,11 @@ info.onLifeZero(function () {
 scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line`, function (sprite2, location2) {
     level += 1
     loadLevel(level)
+})
+controller.combos.attachCombo("aa+b", function () {
+    game.setGameOverMessage(false, "YOU DIED")
+    game.setGameOverEffect(false, effects.dissolve)
+    game.gameOver(false)
 })
 let crouched = 0
 let NGGYUcode = 0
