@@ -46,8 +46,13 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.setImage(assets.image`princessLeft0`)
     }
 })
+controller.combos.attachCombo("a+b", function () {
+    game.setGameOverMessage(false, "YOU DIED")
+    game.setGameOverEffect(false, effects.dissolve)
+    game.gameOver(false)
+})
 info.onCountdownEnd(function () {
-    game.setGameOverMessage(false, "TIMES UP!")
+    game.setGameOverMessage(false, "TIMES UP")
     game.setGameOverEffect(false, effects.dissolve)
     game.gameOver(false)
 })
@@ -95,11 +100,13 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 controller.combos.attachCombo("udlrudlrabab", function () {
     if (basiccode == 1) {
+        game.showLongText("Basic cheat code deactivated!", DialogLayout.Bottom)
         basiccode = 0
         mySprite.ay = 300
         info.changeCountdownBy(-300)
         info.changeLifeBy(-5)
     } else {
+        game.showLongText("Basic cheat code activated!", DialogLayout.Bottom)
         basiccode = 1
         mySprite.ay = 150
         info.changeLifeBy(5)
