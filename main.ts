@@ -8,6 +8,15 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     pause(500)
     mySprite.vy += 0
 })
+controller.combos.attachCombo("ababa+b", function () {
+    if (NGGYUcode == 1) {
+        game.showLongText("NEVER GONNA GIVE YOU UP", DialogLayout.Bottom)
+    } else {
+        NGGYUcode = 1
+        game.showLongText("NEVER GONNA GIVE YOU UP", DialogLayout.Bottom)
+        info.changeLifeBy(1)
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line turn`, function (sprite, location) {
     level += 1
     loadLevel(level)
@@ -84,6 +93,19 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.setImage(assets.image`princessRight`)
     }
 })
+controller.combos.attachCombo("udlrudlrabab", function () {
+    if (basiccode == 1) {
+        basiccode = 0
+        mySprite.ay = 300
+        info.changeCountdownBy(-300)
+        info.changeLifeBy(-5)
+    } else {
+        basiccode = 1
+        mySprite.ay = 150
+        info.changeLifeBy(5)
+        info.changeCountdownBy(300)
+    }
+})
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     if (crouched) {
         crouched = 0
@@ -103,6 +125,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line`, function (sprit
     loadLevel(level)
 })
 let crouched = 0
+let NGGYUcode = 0
+let basiccode = 0
 let level4checkpoint = 0
 let level = 0
 let mySprite: Sprite = null
@@ -110,6 +134,8 @@ scene.setBackgroundColor(15)
 mySprite = sprites.create(assets.image`Prototype Steve`, SpriteKind.Player)
 level = 0
 level4checkpoint = 0
+basiccode = 0
+NGGYUcode = 0
 controller.moveSprite(mySprite, 100, 0)
 mySprite.ay = 300
 scene.cameraFollowSprite(mySprite)
