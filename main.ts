@@ -10,15 +10,15 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 controller.combos.attachCombo("ababa+b", function () {
     if (NGGYUcode == 1) {
-        game.showLongText("NEVER GONNA GIVE YOU UP", DialogLayout.Bottom)
+        game.showLongText("LOL You cant farm lives sry", DialogLayout.Bottom)
     } else {
         NGGYUcode = 1
-        game.showLongText("NEVER GONNA GIVE YOU UP", DialogLayout.Bottom)
+        game.showLongText("NEVER GONNA GIVE YOU UP        ALSO get a life", DialogLayout.Bottom)
         info.changeLifeBy(1)
     }
 })
 function timerfunction () {
-    if (basiccode == 1) {
+    if (basiccodecountdown == 1) {
         return 600
     } else {
         return 300
@@ -86,7 +86,7 @@ function loadLevel (levelNum: number) {
     } else if (levelNum == 5) {
         effects.confetti.startScreenEffect(100000000)
         game.splash("YOU WIN! " + "TIME: " + round2decimal(timerfunction() - info.countdown()))
-        game.showLongText("Thanks for playing \"Block Parkour\"   " + "0.6.2" + "  Wed. Nov. 5, 2025" + "   Made By BlockNinja64", DialogLayout.Center)
+        game.showLongText("Thanks for playing \"Block Parkour\"   " + "v0.6.3" + "  Thur. Nov. 6, 2025" + "   Made By BlockNinja64", DialogLayout.Center)
         info.setScore(round2decimal(timerfunction() - info.countdown()))
         info.stopCountdown()
         game.setGameOverMessage(true, "GAME OVER")
@@ -105,14 +105,14 @@ controller.combos.attachCombo("udlrudlrabab", function () {
         game.showLongText("Basic cheat code deactivated!", DialogLayout.Bottom)
         basiccode = 0
         mySprite.ay = 300
-        info.changeCountdownBy(-300)
         info.changeLifeBy(-5)
     } else {
         game.showLongText("Basic cheat code activated!", DialogLayout.Bottom)
         basiccode = 1
+        basiccodecountdown = 1
         mySprite.ay = 150
         info.changeLifeBy(5)
-        info.changeCountdownBy(300)
+        info.changeCountdownBy(180)
     }
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -134,13 +134,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`Finish line`, function (sprit
     loadLevel(level)
 })
 controller.combos.attachCombo("aa+b", function () {
-    game.setGameOverMessage(false, "YOU DIED")
+    game.setGameOverMessage(false, "LOL YOU DIED")
     game.setGameOverEffect(false, effects.dissolve)
     game.gameOver(false)
 })
 let crouched = 0
 let NGGYUcode = 0
 let basiccode = 0
+let basiccodecountdown = 0
 let level4checkpoint = 0
 let level = 0
 let mySprite: Sprite = null
@@ -148,6 +149,7 @@ scene.setBackgroundColor(15)
 mySprite = sprites.create(assets.image`Prototype Steve`, SpriteKind.Player)
 level = 0
 level4checkpoint = 0
+basiccodecountdown = 0
 basiccode = 0
 NGGYUcode = 0
 controller.moveSprite(mySprite, 100, 0)
