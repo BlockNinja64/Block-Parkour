@@ -1,26 +1,24 @@
  
+> Edit and hack this game at: [https://arcade.makecode.com/#pub:github:BlockNinja64/Block-Parkour](https://arcade.makecode.com/#pub:github:BlockNinja64/Block-Parkour)
+# Changelog
 
+## 0.7.0 (unreleased)
+ - Added changelog
+   - Added historical entries back to version [0.6.0](#062)
+ - Other changes in progress
+   - Hint: _BuToN mApInG_
 
-> Open this page at [https://blockninja64.github.io/Block-Parkour/](https://blockninja64.github.io/Block-Parkour/)
+## 0.6.3
+ - Bugs and text fixes
 
-## Use as Extension
+## 0.6.2
+ - Combo bug fixes
 
-This repository can be added as an **extension** in MakeCode.
+## 0.6.1
+ - Timer bug fixes
 
-* open [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* click on **New Project**
-* click on **Extensions** under the gearwheel menu
-* search for **https://github.com/BlockNinja64/Block-Parkour** and import
-
-## Edit this project
-
-To edit this repository in MakeCode.
-
-* open [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* click on **Import** then click on **Import URL**
-* paste **https://github.com/BlockNinja64/Block-Parkour** and click import
-
-#### Metadata (used for search, rendering)
-
-* for PXT/arcade
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+## 0.6.0
+ - Bug fixes and added new combo
+ - Version number change to [v0.6.0]
+ - Added key combos!
+    - Try typing QEQE then Q+E at the same time
